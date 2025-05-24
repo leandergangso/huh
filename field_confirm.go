@@ -8,8 +8,8 @@ import (
 
 	"github.com/charmbracelet/bubbles/key"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/leandergangso/huh/internal/accessibility"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/leandergangso/huh/internal/accessibility"
 )
 
 // Confirm is a form confirm field.
@@ -51,7 +51,7 @@ func NewConfirm() *Confirm {
 		affirmative:     "Yes",
 		negative:        "No",
 		validate:        func(bool) error { return nil },
-		buttonAlignment: lipgloss.Center,
+		buttonAlignment: lipgloss.Left,
 	}
 }
 
@@ -285,10 +285,7 @@ func (c *Confirm) View() string {
 	promptWidth := lipgloss.Width(sb.String())
 	buttonsWidth := lipgloss.Width(buttonsRow)
 
-	renderWidth := promptWidth
-	if buttonsWidth > renderWidth {
-		renderWidth = buttonsWidth
-	}
+	renderWidth := max(buttonsWidth, promptWidth)
 
 	style := lipgloss.NewStyle().Width(renderWidth).Align(c.buttonAlignment)
 
