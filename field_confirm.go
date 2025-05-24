@@ -369,7 +369,7 @@ func (c *Confirm) WithPosition(p FieldPosition) Field {
 }
 
 // WithButtonAlignment sets the button position of the confirm field.
-func (c *Confirm) WithButtonAlignment(p lipgloss.Position) *Confirm {
+func (c *Confirm) WithButtonAlignment(p lipgloss.Position) Field {
 	c.buttonAlignment = p
 	return c
 }
