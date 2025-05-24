@@ -1,4 +1,4 @@
-module github.com/charmbracelet/huh/spinner
+module github.com/leandergangso/huh/spinner
 
 go 1.23.0
 

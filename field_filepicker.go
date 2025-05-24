@@ -10,7 +10,7 @@ import (
 	"github.com/charmbracelet/bubbles/filepicker"
 	"github.com/charmbracelet/bubbles/key"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/huh/internal/accessibility"
+	"github.com/leandergangso/huh/internal/accessibility"
 	"github.com/charmbracelet/lipgloss"
 	xstrings "github.com/charmbracelet/x/exp/strings"
 )

@@ -14,7 +14,7 @@ import (
 	"github.com/charmbracelet/bubbles/textinput"
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/huh/internal/accessibility"
+	"github.com/leandergangso/huh/internal/accessibility"
 	"github.com/charmbracelet/lipgloss"
 )
 
