@@ -148,7 +148,6 @@ func (c *Confirm) Focus() tea.Cmd {
 // Blur blurs the confirm field.
 func (c *Confirm) Blur() tea.Cmd {
 	c.focused = false
-	c.err = c.validate(c.accessor.Get())
 	return nil
 }
 

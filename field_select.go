@@ -287,7 +287,6 @@ func (s *Select[T]) Blur() tea.Cmd {
 		s.selectValue(value)
 	}
 	s.focused = false
-	s.err = s.validate(value)
 	return nil
 }
 

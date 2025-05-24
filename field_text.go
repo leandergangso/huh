@@ -241,7 +241,6 @@ func (t *Text) Blur() tea.Cmd {
 	t.focused = false
 	t.accessor.Set(t.textarea.Value())
 	t.textarea.Blur()
-	t.err = t.validate(t.accessor.Get())
 	return nil
 }
 

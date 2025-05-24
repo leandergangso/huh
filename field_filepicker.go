@@ -183,7 +183,6 @@ func (f *FilePicker) Focus() tea.Cmd {
 func (f *FilePicker) Blur() tea.Cmd {
 	f.focused = false
 	f.setPicking(false)
-	f.err = f.validate(f.accessor.Get())
 	return nil
 }
 
