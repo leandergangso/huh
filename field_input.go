@@ -11,8 +11,8 @@ import (
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/leandergangso/huh/internal/accessibility"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/leandergangso/huh/internal/accessibility"
 )
 
 // Input is a input field.
@@ -395,7 +395,11 @@ func (i *Input) View() string {
 
 	var sb strings.Builder
 	if i.title.val != "" || i.title.fn != nil {
-		sb.WriteString(styles.Title.Render(wrap(i.title.val, maxWidth)))
+		header := styles.Title.Render(wrap(i.title.val, maxWidth))
+		if i.err != nil {
+			header += styles.ErrorIndicator.String()
+		}
+		sb.WriteString(header)
 		if !i.inline {
 			sb.WriteString("\n")
 		}

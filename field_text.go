@@ -11,8 +11,8 @@ import (
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/textarea"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/leandergangso/huh/internal/accessibility"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/leandergangso/huh/internal/accessibility"
 )
 
 // Text is a text field.
@@ -401,8 +401,7 @@ func (t *Text) View() string {
 	}
 	parts = append(parts, t.textarea.View())
 
-	return styles.Base.
-		Render(strings.Join(parts, "\n"))
+	return styles.Base.Render(strings.Join(parts, "\n"))
 }
 
 // Run runs the text field.

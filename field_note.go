@@ -228,10 +228,9 @@ func (n *Note) View() string {
 	if n.description.val != "" || n.description.fn != nil {
 		sb.WriteRune('\n')
 		sb.WriteString(wrap(render(n.description.val), maxWidth))
-		sb.WriteRune('\n')
 	}
 	if n.showNextButton {
-		sb.WriteRune('\n')
+		sb.WriteString("\n\n")
 		sb.WriteString(styles.Next.Render(n.nextLabel))
 	}
 	return styles.Card.
