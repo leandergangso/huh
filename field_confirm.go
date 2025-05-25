@@ -210,9 +210,17 @@ func (c *Confirm) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			cmds = append(cmds, NextField)
 		case key.Matches(msg, c.keymap.Accept):
 			c.accessor.Set(true)
+			c.err = c.validate(true)
+			if c.err != nil {
+				return c, nil
+			}
 			cmds = append(cmds, NextField)
 		case key.Matches(msg, c.keymap.Reject):
 			c.accessor.Set(false)
+			c.err = c.validate(true)
+			if c.err != nil {
+				return c, nil
+			}
 			cmds = append(cmds, NextField)
 		}
 	}
