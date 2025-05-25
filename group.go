@@ -391,6 +391,5 @@ func (g *Group) Footer() string {
 			))
 		}
 	}
-	return g.styles().Base.
-		Render(strings.Join(parts, "\n"))
+	return g.styles().Base.Render(strings.Join(parts, "\n"))
 }
